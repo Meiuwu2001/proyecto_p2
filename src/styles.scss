@@ -215,6 +215,9 @@ $font-family: "Arial, sans-serif";
 
     .navbar-collapse {
       flex-direction: column;
+      display: flex;
+      justify-content: left;
+      margin: auto;
     }
   }
 }
