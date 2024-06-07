@@ -3,6 +3,7 @@ import { Product } from '../../model/product';
 import { ProductoService } from '../../service/producto.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
+import { ProductFormComponent } from '../product-form/product-form.component';
 
 @Component({
   selector: 'app-product-list',
@@ -10,11 +11,29 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrl: './product-list.component.scss',
 })
 export class ProductListComponent implements OnInit {
-  editDialog(_t77: any) {
-    throw new Error('Method not implemented.');
+  editDialog(element: Product) {
+    const dialogRef = this.dialog.open(ProductFormComponent, {
+      data: element,
+
+    });
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('Dialog was closed');
+      if (result) {
+        this.productListMethod();
+      }
+    });
   }
   openDialog() {
-    throw new Error('Method not implemented.');
+    const dialogRef = this.dialog.open(ProductFormComponent, {
+      data: null,
+    });
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('Dialog was closed');
+      if (result) {
+        this.productListMethod();
+      }
+    });
   }
   productList!: MatTableDataSource<Product>;
   columnsHeader = ['date', 'name', 'price', 'amount', 'status', 'opciones'];
@@ -22,7 +41,7 @@ export class ProductListComponent implements OnInit {
   constructor(
     private productService: ProductoService,
     public dialog: MatDialog
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.productListMethod();

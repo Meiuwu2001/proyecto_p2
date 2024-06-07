@@ -19,6 +19,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { ProductFormComponent } from './view/product-form/product-form.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { ReactiveFormsModule } from '@angular/forms';
+
+
 
 @NgModule({
   declarations: [
@@ -26,6 +30,7 @@ import { ProductFormComponent } from './view/product-form/product-form.component
     ProductListComponent,
     SidebarComponent,
     ProductFormComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -39,6 +44,8 @@ import { ProductFormComponent } from './view/product-form/product-form.component
     MatIconModule,
     MatPaginator,
     MatTableModule,
+    MatDialogModule,
+    ReactiveFormsModule,
   ],
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
