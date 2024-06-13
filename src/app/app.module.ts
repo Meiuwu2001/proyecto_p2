@@ -21,6 +21,7 @@ import { MatTableModule } from '@angular/material/table';
 import { ProductFormComponent } from './view/product-form/product-form.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ConfirmacionComponent } from './view/confirmacion/confirmacion.component';
 
 
 
@@ -30,6 +31,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ProductListComponent,
     SidebarComponent,
     ProductFormComponent,
+    ConfirmacionComponent,
     
   ],
   imports: [

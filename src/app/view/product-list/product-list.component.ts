@@ -4,6 +4,7 @@ import { ProductoService } from '../../service/producto.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatDialog } from '@angular/material/dialog';
 import { ProductFormComponent } from '../product-form/product-form.component';
+import { ConfirmacionComponent } from '../confirmacion/confirmacion.component';
 
 @Component({
   selector: 'app-product-list',
@@ -35,6 +36,18 @@ export class ProductListComponent implements OnInit {
       }
     });
   }
+  delete(){
+    const dialogRef = this.dialog.open(ConfirmacionComponent, {
+      data: null,
+    });    
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('Dialog was closed');
+      if (result) {
+        this.productListMethod();
+      }
+    });
+  }
+
   productList!: MatTableDataSource<Product>;
   columnsHeader = ['date', 'name', 'price', 'amount', 'status', 'opciones'];
 

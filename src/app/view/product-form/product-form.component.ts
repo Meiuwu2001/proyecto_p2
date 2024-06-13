@@ -47,31 +47,7 @@ export class ProductFormComponent implements OnInit {
     }
   }
   onSubmit() {
-    if (this.formGroup.valid) {
-      const product: Product = this.formGroup.value;
-
-      // Ensure price is a number
-      if (!this.data) {
-        this.productoService.addProduct(product).subscribe(
-          () => {
-            console.log('Successfully added');
-            this.dialogRef.close(true);
-          },
-          (error) => {
-            console.log('Error adding product', error);
-          }
-        );
-      } else {
-        // this.productoService.updateProduct(this.data.id, this.formGroup.value).subscribe(
-        //   () => {
-        //     console.log('Successfully updated');
-        //     this.dialogRef.close(true);
-        //   },
-        //   (error) => {
-        //     console.log('Error updating product', error);
-        //   }
-        // );
-      }
-    }
+    
+    
   }
 }
