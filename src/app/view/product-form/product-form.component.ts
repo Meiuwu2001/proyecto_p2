@@ -46,8 +46,29 @@ export class ProductFormComponent implements OnInit {
       })
     }
   }
-  onSubmit() {
-    
-    
+
+  save(): void {
+    let request ={
+      id:this.data!=null?this.data._id:null,
+      name:this.formGroup.value.name,
+      code:this.formGroup.value.code,
+      category:this.formGroup.value.category,
+      description:this.formGroup.value.description,
+      price:this.formGroup.value.price,
+      amount:this.formGroup.value.amount,
+    }
+console.log(request)
+    try {
+      if(!this.data){
+        this.productoService.addProduct(request).subscribe(item=>console.log(item)
+        )
+      }else{
+        this.productoService.editProduct(request).subscribe(item => console.log(item))
+      }
+      this.dialogRef.close(true);
+    } catch (error) {
+      console.log(error);
+      
+    }
   }
 }

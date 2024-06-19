@@ -9,16 +9,18 @@ import { Product } from '../model/product';
 export class ProductoService {
   url = 'http://localhost:5000/api/product'; //backend
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   getProducts(): Observable<Product[]> {
     return this.http.get<Product[]>(this.url);
   }
-
-  addProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(this.url, { product });
+  
+  addProduct(product: any): Observable<Product> {
+    return this.http.post<Product>(this.url,  product );
   }
-
+  editProduct(product: any): Observable<Product> {
+    return this.http.patch<Product>(this.url, product )
+  }
   deleteProduct(id: string): Observable<Product> {
     return this.http.delete<Product>(this.url + '/' + id);
   }
