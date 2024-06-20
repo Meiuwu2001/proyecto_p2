@@ -36,16 +36,30 @@ export class ProductListComponent implements OnInit {
       }
     });
   }
-  delete(){
+  delete(id: string) {
     const dialogRef = this.dialog.open(ConfirmacionComponent, {
       data: null,
-    });    
-    dialogRef.afterClosed().subscribe((result: any) => {
-      console.log('Dialog was closed');
-      if (result) {
-        this.productListMethod();
-      }
     });
+  
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log('The dialog was closed');
+     if(result){
+      
+      this.deleteProduct1(id)
+      
+     }
+    });
+  }
+  deleteProduct1(id: string) {
+    try {
+      this.productService
+        .deleteProduct(id)
+        .subscribe(item => console.log(item));
+      this.productListMethod();
+      
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   productList!: MatTableDataSource<Product>;

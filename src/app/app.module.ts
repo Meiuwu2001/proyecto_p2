@@ -22,6 +22,10 @@ import { ProductFormComponent } from './view/product-form/product-form.component
 import {MatDialogModule} from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmacionComponent } from './view/confirmacion/confirmacion.component';
+import { LoginComponent } from './view/login/login.component';
+import { UsersComponent } from './view/users/users.component';
+import { RegisterComponent } from './view/register/register.component';
+import { ConfirmacionuserComponent } from './view/confirmacionuser/confirmacionuser.component';
 
 
 
@@ -32,6 +36,10 @@ import { ConfirmacionComponent } from './view/confirmacion/confirmacion.componen
     SidebarComponent,
     ProductFormComponent,
     ConfirmacionComponent,
+    LoginComponent,
+    UsersComponent,
+    RegisterComponent,
+    ConfirmacionuserComponent,
     
   ],
   imports: [
