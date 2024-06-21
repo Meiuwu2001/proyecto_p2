@@ -3,7 +3,6 @@ export interface User {
    _id: any;
    username: string;
    name: string;
-   lastname: string;
    email: string;
    phone: string;
    role: string;

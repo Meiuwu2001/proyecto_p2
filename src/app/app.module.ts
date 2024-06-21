@@ -19,13 +19,16 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import { ProductFormComponent } from './view/product-form/product-form.component';
-import {MatDialogModule} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmacionComponent } from './view/confirmacion/confirmacion.component';
 import { LoginComponent } from './view/login/login.component';
 import { UsersComponent } from './view/users/users.component';
 import { RegisterComponent } from './view/register/register.component';
 import { ConfirmacionuserComponent } from './view/confirmacionuser/confirmacionuser.component';
+import { VentasComponent } from './view/ventas/ventas.component';
+import { ProductCardComponent } from './view/product-card/product-card.component';
+import { CartComponent } from './view/cart/cart.component';
 
 
 
@@ -40,7 +43,10 @@ import { ConfirmacionuserComponent } from './view/confirmacionuser/confirmacionu
     UsersComponent,
     RegisterComponent,
     ConfirmacionuserComponent,
-    
+    VentasComponent,
+    ProductCardComponent,
+    CartComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -60,4 +66,4 @@ import { ConfirmacionuserComponent } from './view/confirmacionuser/confirmacionu
   providers: [provideClientHydration(), provideAnimationsAsync()],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }
