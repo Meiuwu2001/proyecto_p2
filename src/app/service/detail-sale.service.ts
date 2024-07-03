@@ -21,7 +21,7 @@ export class DetailSaleService {
     product.amount = 1
     this.productList.push(product)
     this.products.next(this.productList)
-  }
+    }
 
   deleteProductSale(id: String) {
     let index = this.productList.findIndex(item => item._id === id)
